@@ -82,6 +82,13 @@ chmod +x build.sh start.sh stop.sh scripts/*.sh
 
 导出（在能访问镜像的机器上）：
 
+`方式1 不使用压缩`
+```bash
+docker save oracle/database:11.2.0.4-ee > oracle11204_x86.tar
+```
+
+
+`方式2 使用压缩`
 ```bash
 docker save oracle/database:11.2.0.4-ee | gzip > oracle11204-image.tar.gz
 ```
@@ -89,7 +96,10 @@ docker save oracle/database:11.2.0.4-ee | gzip > oracle11204-image.tar.gz
 导出的文件用 gzip 压缩后通常还有几 GB，建议用 `rsync`/U 盘/内部文件服务器传输，而不是走公共网络。
 
 导入（在目标机器上）：
-
+```bash
+docker load < oracle11204_x86.tar
+```
+或者
 ```bash
 gunzip -c oracle11204-image.tar.gz | docker load
 ```
