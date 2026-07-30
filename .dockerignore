@@ -1,0 +1,8 @@
+.git
+.gitignore
+.env
+*.log
+oracle11204-data/
+oracle_data/
+
+

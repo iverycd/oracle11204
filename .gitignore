@@ -1,0 +1,7 @@
+.idea
+.claude
+database/*.zip
+dist
+oracle_data
+.env
+build*.log
